@@ -1,5 +1,6 @@
 // 1-Pacote
 package devcalc;
+
 // 2 - Bibliotecas
 
 import java.util.Scanner;
@@ -16,20 +17,22 @@ public class Calc {
         System.out.println("(2) Subtrair");
         System.out.println("(3) Multiplicar");
         System.out.println("(4) Dividir");
-        System.out.println("Escolha o Calculo Desejado");
+        System.out.print("Escolha o Calculo Desejado: ");
 
+        //Recebe a opção desejada
         String opcao = entrada.nextLine();
 
-
-        System.out.println("Entre o 1º numero: ");
+        // Pergunta os valores a serem usados no calculo
+        System.out.print("Entre o 1º numero: ");
         int num1 = entrada.nextInt();
-        System.out.println("Entre o 2º numero: ");
+        System.out.print("Entre o 2º numero: ");
         int num2 = entrada.nextInt();
+        System.out.println("O resultado é: ");
 
         // Chama a função do calculo desejado
         switch (opcao){
             case "1":
-                somarDoisNumeros();
+                System.out.print(somarDoisNumeros(num1, num2));
                 break;
 
             default:
@@ -37,15 +40,12 @@ public class Calc {
                 break;
         }
 
-        System.out.println("Passou pelo método main");
-
     }
 
-    public static void somarDoisNumeros(int num1, int num2){
+    public static int somarDoisNumeros(int num1, int num2){
+        return num1 + num2;
 
-        System.out.println("Passou pelo método somarDoisNumeros");
     }
-
-
-
 }
+
+
