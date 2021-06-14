@@ -20,20 +20,31 @@ public class Calc {
         System.out.print("Escolha o Calculo Desejado: ");
 
         // Recebe a opção desejada
-        String opcao = entrada.nextLine();
+        int opcao = entrada.nextInt();
+        int num1 = 0;
+        int num2 = 0;
 
         // Pergunta os valores a serem usados no calculo
-        System.out.print("Entre o 1º numero: ");
-        int num1 = entrada.nextInt();
-        System.out.print("Entre o 2º numero: ");
-        int num2 = entrada.nextInt();
-        System.out.print("O resultado é: ");
+            if (opcao >= 1 && opcao <= 4) {
+            System.out.print("Entre o 1º numero: ");
+            num1 = entrada.nextInt();
+            System.out.print("Entre o 2º numero: ");
+            num2 = entrada.nextInt();
+            System.out.print("O resultado é: ");
+        }
 
         // Chama a função do calculo desejado
-        switch (opcao){
-            case "1":
+            switch (opcao){
+            case 1:
                 System.out.println(somarDoisNumeros(num1, num2));
                 break;
+            case 2:
+                System.out.println(subDoisNumeros(num1, num2));
+                break;
+            case 3:
+                System.out.println(multipDoisNumeros(num1, num2));
+            case 4:
+                System.out.println(divDoisNumeros(num1, num2));
 
             default:
                 System.out.println("Opção invalida");
@@ -45,4 +56,18 @@ public class Calc {
     public static int somarDoisNumeros(int num1, int num2){
         return num1 + num2;
     }
+
+    public static int subDoisNumeros(int num1, int num2){
+        return num1 - num2;
+    }
+
+    public static int multipDoisNumeros(int num1, int num2){
+        return num1 * num2;
+    }
+
+    public static int divDoisNumeros(int num1, int num2){
+        return num1 / num2;
+    }
+
+
 }
