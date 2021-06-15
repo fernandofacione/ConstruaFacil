@@ -3,7 +3,6 @@ package devcalc;
 // 2 - Bibliotecas
 import java.util.Scanner;
 
-// 3 - Classe
 public class Calc {
     // 3.1 - Atributos
     static Scanner entrada = new Scanner(System.in); // entrada = input
@@ -30,7 +29,7 @@ public class Calc {
             num1 = entrada.nextInt();
             System.out.print("Entre o 2º numero: ");
             num2 = entrada.nextInt();
-            System.out.print("O resultado é: ");
+            System.out.print("O resultado é: %.2f ");
         }
 
         // Chama a função do calculo desejado
@@ -68,6 +67,7 @@ public class Calc {
     public static int divDoisNumeros(int num1, int num2){
         return num1 / num2;
     }
+
 
 
 }
