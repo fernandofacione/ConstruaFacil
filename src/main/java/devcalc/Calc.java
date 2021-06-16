@@ -29,7 +29,7 @@ public class Calc {
             num1 = entrada.nextInt();
             System.out.print("Entre o 2º numero: ");
             num2 = entrada.nextInt();
-            System.out.print("O resultado é: %.2f ");
+            System.out.print("O resultado é: ");
         }
 
         // Chama a função do calculo desejado
