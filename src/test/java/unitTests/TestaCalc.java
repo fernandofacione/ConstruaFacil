@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TestaCalc {
-    @Test
+    @Test (priority = 2)
     public void testarSomarDoisNumeros() {
 
         // 1 - Preparar - Configurar - Given
@@ -25,7 +25,7 @@ public class TestaCalc {
         assertEquals(resultadoEsperado, resultadoAtual);
 
     }
-    @Test
+    @Test (priority = 1)
     public void testarSubDoisNumeros(){
         // 1 - Preparar - Configurar - Given
         int num1 = 12;
@@ -41,7 +41,7 @@ public class TestaCalc {
 
         assertEquals(resultadoEsperado,resultadoAtual);
     }
-    @Test
+    @Test (priority = 4)
     public void testarmultipDoisNumeros() {
         // 1 - Preparar - Configurar - Given
         int num1 = 12;
@@ -58,7 +58,7 @@ public class TestaCalc {
         assertEquals(resultadoEsperado, resultadoAtual);
     }
 
-    @Test
+    @Test (priority = 3)
     public void testardivDoisNumeros() {
         // 1 - Preparar - Configurar - Given
         int num1 = 12;
