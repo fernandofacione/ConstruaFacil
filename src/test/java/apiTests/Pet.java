@@ -18,7 +18,12 @@ public class Pet {
         given()
                 .contentType("application/json")
                 .log().all()
-                .when()
+        .when()
+                .post("https://petstore.swagger.io/v2/pet")
+
+        .then()
+                .log() .all()
+        ;
     }
 
 
