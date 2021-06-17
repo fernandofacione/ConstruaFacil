@@ -1,0 +1,18 @@
+{
+  "id": 1010,
+  "category": {
+    "id": 1,
+    "name": "dog"
+  },
+  "name": "Pateta",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
