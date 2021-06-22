@@ -1,12 +1,12 @@
 package apiTests;
 
+import com.sun.org.apache.xpath.internal.operations.String;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static com.google.inject.matcher.Matchers.not;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.core.Is.is;
@@ -36,16 +36,35 @@ public class Pet {
                 // "application/json" para web services assincronos - ex: ifood
                 .log().all()                                        //Registrar tudo do envio
                 .body(jsonBody)
-        .when()
+                .when()
                 .post("https://petstore.swagger.io/v2/pet")        //Comando + endpoint
-        .then()                                                         //Então
+                .then()                                                         //Então
                 .log().all()                                            //Registrar tudo da volta
                 .statusCode(200)                                        //ValidarCódigo do Estado
-                .body("id", is(1010))                        //Valida o ID
+                .body("id", is(1110))                        //Valida o ID
                 .body("name", is("Pateta"))                  //Valida o nome do animal
-                .body("category.name", is("dog"))            //Valida a categoria do animal
-                .body("tags.name", not(contains("nao vermifugado")))      //Valida se contem a palavra chave
-                .body("tags.name", contains("vacina em dia"));
+                .body("category.name", is("dog"))           //Valida a categoria do animal
+                .body("tags.name", contains("vermifugado ok"))    //Valida se contem a palavra chave
+        ;
+
+    }
+
+        @Test
+        public void incluirPet(){
+
+                String petID = "1110";
+
+                given()
+                        .contentType("application/json")
+                        .log().all()
+
+                .when()
+                        .get("https://petstore.swagger.io/v2/pet" + petID)
+
+                .then()
+                        .
+        }
+
 
     }
 
