@@ -1,5 +1,5 @@
 {
-  "id": 1010,
+  "id": 1110,
   "category": {
     "id": 1,
     "name": "dog"
@@ -11,7 +11,11 @@
   "tags": [
     {
       "id": 0,
-      "name": "Animal vermifugado e com todas as vacinas em dia!"
+      "name": "Animal vermifugado na primeira semana!"
+    },
+    {
+      "id": 1,
+      "name": "Teste"
     }
   ],
   "status": "available"
