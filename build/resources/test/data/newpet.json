@@ -1,0 +1,22 @@
+{
+  "id": 1110,
+  "category": {
+    "id": 1,
+    "name": "dog"
+  },
+  "name": "Pateta",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 3,
+      "name": "Animal vermifugado na primeira semana!"
+    },
+    {
+      "id": 4,
+      "name": "Teste"
+    }
+  ],
+  "status": "sold"
+}

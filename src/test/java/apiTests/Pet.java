@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.stringContainsInOrder;
 
 
 public class Pet {
-
+    String uri = "https://petstore.swagger.io/v2/pet";
+    int petId = 1110;
 
     // Padrão
     // Given = Dado
@@ -25,7 +25,7 @@ public class Pet {
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
-    @Test
+    @Test (priority = 0)
     public void incluirPet() throws IOException { // Create - Post
 
         String jsonBody = lerJson("src/test/resources/data/pet.json");
@@ -36,13 +36,13 @@ public class Pet {
                 // "application/json" para web services assincronos - ex: iFood
                 .log().all()                                    //Registrar tudo do envio
                 .body(jsonBody)
-                .when()                                                 //Quando
-                .post("https://petstore.swagger.io/v2/pet")     //Comando + endpoint
-                .then()                                                 // Então
+        .when()                                                 //Quando
+                .post(uri)     //Comando + endpoint
+        .then()                                                 // Então
                 .log().all()                                    // Registrar tudo da volta
                 .statusCode(200)                                // Valida o Código do Estado Nativo
-                // .body("code", is(200))               // Valida o Código de Estado no Json
-                .body("id", is(1110))        // Valida o id do animal
+                // .body("code", is(200))                          // Valida o Código de Estado no Json
+                .body("id", is(petId))                   // Valida o id do animal
                 .body("name", is("Pateta"))            // Valida o nome do animal
                 .body("category.name", is("dog"))       // Valida a categoria do animal
                 //.body("tags.name", not(contains("não vermifugado")))  // Valida se contem a palavra chava
@@ -55,14 +55,13 @@ public class Pet {
 
     @Test
     public void consultarPet(){
-        String petId = "1110"; // Id do animal
 
         given()
                 .contentType("application/json")
                 .log().all()
-                .when()
-                .get("https://petstore.swagger.io/v2/pet/" + petId) // Get == Consultar
-                .then()
+        .when()
+                .get(uri + "/" + petId) // Get == Consultar
+        .then()
                 .log().all()
                 .statusCode(200)
                 .body("name", is("Pateta"))
@@ -79,7 +78,7 @@ public class Pet {
                 .log().all()
                 .body(jsonBody) // Json a ser transmitido para a alteração
                 .when()
-                .put("https://petstore.swagger.io/v2/pet")
+                .put(uri)
                 .then()
                 .log().all()
                 .statusCode(200)

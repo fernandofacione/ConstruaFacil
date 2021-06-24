@@ -36,7 +36,7 @@
     "status": "sold"
 }
 HTTP/1.1 200 OK
-%Date: Wed, 23 Jun 2021 23:49:58 GMT
+%Date: Thu, 24 Jun 2021 00:35:56 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -83,7 +83,7 @@
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-%Date: Wed, 23 Jun 2021 23:50:00 GMT
+%Date: Thu, 24 Jun 2021 00:35:57 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -155,7 +155,7 @@
     "status": "sold"
 }
 HTTP/1.1 200 OK
-%Date: Wed, 23 Jun 2021 23:50:00 GMT
+%Date: Thu, 24 Jun 2021 00:35:58 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
