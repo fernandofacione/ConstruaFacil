@@ -25,7 +25,7 @@ public class Pet {
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
-    @Test (priority = 0)
+    @Test (priority = 3)
     public void incluirPet() throws IOException { // Create - Post
 
         String jsonBody = lerJson("src/test/resources/data/pet.json");
@@ -53,7 +53,7 @@ public class Pet {
         ;
     }
 
-    @Test
+    @Test (priority = 2)
     public void consultarPet(){
 
         given()
@@ -69,7 +69,7 @@ public class Pet {
         ;
     }
 
-    @Test
+    @Test (priority = 1)
     public void alterarPet() throws IOException {
         String jsonBody = lerJson("src/test/resources/data/newpet.json");
 
@@ -77,13 +77,21 @@ public class Pet {
                 .contentType("application/json")
                 .log().all()
                 .body(jsonBody) // Json a ser transmitido para a alteração
-                .when()
+        .when()
                 .put(uri)
-                .then()
+        .then()
                 .log().all()
                 .statusCode(200)
                 .body("status", is("sold"))
         ;
     }
+
+  //  @Test
+ //   public void alterarPet() throws IOException {
+
+
+
+
+  //  }
 
 }
