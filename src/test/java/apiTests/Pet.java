@@ -46,16 +46,16 @@ public class Pet {
                 .body("name", is("Pateta"))            // Valida o nome do animal
                 .body("category.name", is("dog"))       // Valida a categoria do animal
                 //.body("tags.name", not(contains("não vermifugado")))  // Valida se contem a palavra chava
-                //.body("tags.id[0]", is(3))
-                //.body("tags.name[0]", stringContainsInOrder("primeira semana"))
-                //.body("tags.id[1]", is(4))
-                //.body("tags.name[1]", stringContainsInOrder("segunda semana"))
+                .body("tags.id[0]", is(3))
+                .body("tags.name[0]", stringContainsInOrder("primeira semana"))
+                .body("tags.id[1]", is(4))
+                .body("tags.name[1]", stringContainsInOrder("Teste"))
         ;
     }
 
     @Test
     public void consultarPet(){
-        String petId = "1101"; // Id do animal
+        String petId = "1110"; // Id do animal
 
         given()
                 .contentType("application/json")
@@ -65,8 +65,25 @@ public class Pet {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body("name", is("Atena"))
-                .body("status", is("available"))
+                .body("name", is("Pateta"))
+                .body("status", is("sold"))
+        ;
+    }
+
+    @Test
+    public void alterarPet() throws IOException {
+        String jsonBody = lerJson("src/test/resources/data/newpet.json");
+
+        given()
+                .contentType("application/json")
+                .log().all()
+                .body(jsonBody) // Json a ser transmitido para a alteração
+                .when()
+                .put("https://petstore.swagger.io/v2/pet")
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("status", is("sold"))
         ;
     }
 
