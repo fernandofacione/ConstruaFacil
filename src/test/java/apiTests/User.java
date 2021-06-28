@@ -39,7 +39,8 @@ public class User {
                     .statusCode(200)
                     .body("code", is(200))
                     .body("code", is("unknown"))
-                    .body("message", is(Integer.toString(userId)));
+                    .body("message", is(Integer.toString(userId)))
+             ;
 
     }
 
