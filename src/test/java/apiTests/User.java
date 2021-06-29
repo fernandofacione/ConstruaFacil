@@ -29,7 +29,7 @@ public class User {
              String jsonBody = lerJson("src/test/resources/data/user.json");
 
              given()
-                     .contentType("application/sjon")
+                     .contentType("application/json")
                      .log().all()
                      .body(jsonBody)
              .when()
@@ -38,7 +38,7 @@ public class User {
                     .log().all()
                     .statusCode(200)
                     .body("code", is(200))
-                    .body("code", is("unknown"))
+                    .body("type", is("unknown"))
                     .body("message", is(Integer.toString(userId)))
              ;
 
