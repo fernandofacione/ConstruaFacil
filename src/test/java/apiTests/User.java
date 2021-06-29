@@ -1,11 +1,9 @@
 package apiTests;
 
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
@@ -45,7 +43,7 @@ public class User {
                     .body("message", is(Integer.toString(userId)))
              ;
 
-    }
+        }
 
         @Test
         public void consultarUsuario() {
@@ -66,7 +64,6 @@ public class User {
                     .body("password", is("123456"))
                     .body("phone", is("55998895090"))
                     .body("userStatus", is(0))
-
             ;
 
         }
