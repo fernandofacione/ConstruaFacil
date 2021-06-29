@@ -1,5 +1,5 @@
-Request method:	POST
-2Request URI:	https://petstore.swagger.io/v2/user
+Request method:	GET
+\Request URI:	https://petstore.swagger.io/v2/user/login?username=darthvader&password=123456
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -9,29 +9,23 @@
 2				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "id": 2110,
-    "firtName": "darth",
-    "username": "darthvader",
-    "lastName": "vader",
-$    "email": "darthvader@test.com",
-    "password": "123456",
-    "phone": "55998895090",
-    "userStatus": 0
-}
+Body:			<none>
 HTTP/1.1 200 OK
-%Date: Tue, 29 Jun 2021 00:04:44 GMT
+%Date: Tue, 29 Jun 2021 01:22:22 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
  Access-Control-Allow-Origin: *
 6Access-Control-Allow-Methods: GET, POST, DELETE, PUT
 DAccess-Control-Allow-Headers: Content-Type, api_key, Authorization
+/X-Expires-After: Tue Jun 29 02:22:22 UTC 2021
+X-Rate-Limit: 5000
  Server: Jetty(9.2.9.v20150224)
 
 {
     "code": 200,
     "type": "unknown",
-    "message": "2110"
+6    "message": "logged in user session:1624929742547"
 }
+7A mesangem Ã© :logged in user session:1624929742547
+O token Ã© :1624929742547
