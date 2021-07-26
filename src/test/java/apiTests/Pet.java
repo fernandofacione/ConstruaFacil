@@ -44,8 +44,8 @@ public class Pet {
                         .statusCode(200)                                // Valida o Código do Estado Nativo
                         // .body("code", is(200))               // Valida o Código de Estado no Json
                         .body("id", is(petId))        // Valida o id do animal
-                        .body("name", is("Atena"))            // Valida o nome do animal
-                        .body("category.name", is("dog"))       // Valida a categoria do animal
+                        .body("name", is("Pluto"))            // Valida o nome do animal
+                        .body("category.name", is("cao"))       // Valida a categoria do animal
                         //.body("tags.name", not(contains("não vermifugado")))  // Valida se contem a palavra chava
                         .body("tags.id[0]", is(3))
                         .body("tags.name[0]", stringContainsInOrder("primeira semana"))
