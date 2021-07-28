@@ -12,3 +12,5 @@ utils/Logs.java
  utils.Logs
 unitTests/TestaCalc.java
  unitTests.TestaCalc
+webTests/comprarCursoCS.java
+ webTests.comprarCursoCS
