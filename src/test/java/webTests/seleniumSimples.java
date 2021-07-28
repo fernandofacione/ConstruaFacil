@@ -5,9 +5,13 @@ package webTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import utils.Evidencias;
+import utils.Logs;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -15,10 +19,6 @@ import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-import utils.Evidencias;
-import utils.Logs;
 
 // 3 - Classe
 public class seleniumSimples {
