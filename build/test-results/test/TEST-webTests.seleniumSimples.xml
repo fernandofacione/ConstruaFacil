@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="webTests.seleniumSimples" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-07-28T23:09:11" hostname="NANINE" time="23.901">
+  <properties/>
+  <testcase name="consultarCursoMantis" classname="webTests.seleniumSimples" time="12.269"/>
+  <testcase name="consultarCursoCTFL" classname="webTests.seleniumSimples" time="8.731"/>
+  <system-out><![CDATA[dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+dataHora: 2021-07-28 20-09
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 10522
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1627513751.877][WARNING]: This version of ChromeDriver has not been tested with Chrome version 92.
+jul 28, 2021 8:09:11 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAÇÕES: Detected dialect: W3C
+Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 28777
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1627513767.064][WARNING]: This version of ChromeDriver has not been tested with Chrome version 92.
+jul 28, 2021 8:09:27 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAÇÕES: Detected dialect: W3C
+]]></system-err>
+</testsuite>
