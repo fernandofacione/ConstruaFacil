@@ -1,22 +1,22 @@
 {
-  "id": 1110,
+  "id": 1101,
   "category": {
     "id": 1,
-    "name": "dog"
+    "name": "cao"
   },
-  "name": "Pateta",
+  "name": "Pluto",
   "photoUrls": [
     "string"
   ],
   "tags": [
     {
       "id": 3,
-      "name": "Animal vermifugado na primeira semana!"
+      "name": "animal vermifugado na primeira semana"
     },
     {
       "id": 4,
-      "name": "Teste"
+      "name": "vacinado na segunda semana"
     }
   ],
-  "status": "sold"
+  "status": "available"
 }
