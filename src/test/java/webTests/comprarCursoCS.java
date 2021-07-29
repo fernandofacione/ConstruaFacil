@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
@@ -64,8 +65,10 @@ public class comprarCursoCS {
         String textoEsperado = "Cursos › \"" + curso + "\"";
 
         //wait.until(ExpectedConditions.textToBe(By.cssSelector("h3:nth-child(1)"),textoEsperado));
-        assertEquals(driver.findElement(By.cssSelector("h3")).getText(),textoEsperado);
+        //assertEquals(driver.findElement(By.cssSelector("h3")).getText(),textoEsperado);
 
+        //Esperar que o elemento tenha o texto desejado
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("h3"), textoEsperado));
         assertEquals(driver.findElement(By.cssSelector("h3")).getText(), "Cursos › \"" + curso + "\"");
         System.out.println("4 - Exibiu a lista de resultados para o curso " + curso);
     }
