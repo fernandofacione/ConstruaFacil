@@ -2,10 +2,7 @@ package webTests;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.E;
-import cucumber.api.java.pt.Entao;
-import cucumber.api.java.pt.Quando;
+import cucumber.api.java.pt.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -82,6 +79,8 @@ public class comprarCursoCS {
     @Entao("^confirmo o nome do curso como \"([^\"]*)\" e o preco de \"([^\"]*)\"$")
     public void confirmoONomeDoCursoComoEOPrecoDe(String curso, String preco) {
         //wait.until(ExpectedConditions.textToBe(By.cssSelector("span.item-title"),curso));
+
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("span.item-title"),curso));
         assertEquals(driver.findElement(By.cssSelector("span.item-title")).getText(), curso);
         assertEquals(driver.findElement(By.cssSelector("span.new-price")).getText(), preco);
         System.out.println("6 - Confirmou o nome como " + curso + " e o preco do curso como " + preco);
@@ -94,4 +93,20 @@ public class comprarCursoCS {
         System.out.println("3a - Pressionou o Enter");
     }
 
+    @Quando("^clico na imagem de um curso$")
+    public void clicoNaImagemDeUmCurso() {
+        driver.findElement(By.cssSelector("span.mais")).click();
+
+    }
+
+    @Então("^Vejo a pagina com detalhes do curso$")
+    public void vejoAPaginaComDetalhesDoCurso() {
+        wait.until(ExpectedConditions. titleIs("Mantis - Iterasys"));
+        assertEquals(driver.getTitle(),"Mantis - Iterasys");
+    }
+
+    @E("^clico no botao OK do popup da LGPD$")
+    public void clicoNoBotaoOKDoPopupDaLGPD() {
+        driver.findElement(By.cssSelector("a.cc-btn.cc-dismiss")).click();
+    }
 }
