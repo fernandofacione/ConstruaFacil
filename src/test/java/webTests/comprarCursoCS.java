@@ -2,7 +2,10 @@ package webTests;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.pt.*;
+import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.E;
+import cucumber.api.java.pt.Entao;
+import cucumber.api.java.pt.Quando;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
@@ -24,7 +25,7 @@ public class comprarCursoCS {
     public void iniciar() {
         System.setProperty("webdriver.chrome.driver", "drivers/chrome/91/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
+        //driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize(); // Maximizar a janela
 
         wait = new WebDriverWait(driver,5,1); // espera até 60 segundos
@@ -66,7 +67,7 @@ public class comprarCursoCS {
         //wait.until(ExpectedConditions.textToBe(By.cssSelector("h3:nth-child(1)"),textoEsperado));
         //assertEquals(driver.findElement(By.cssSelector("h3")).getText(),textoEsperado);
 
-        //Esperar que o elemento tenha o texto desejado
+        // Esperar que o elemento tenha o texto desejado
         wait.until(ExpectedConditions.textToBe(By.cssSelector("h3"), textoEsperado));
         assertEquals(driver.findElement(By.cssSelector("h3")).getText(), "Cursos › \"" + curso + "\"");
         System.out.println("4 - Exibiu a lista de resultados para o curso " + curso);
@@ -97,31 +98,28 @@ public class comprarCursoCS {
 
     @Quando("^clico na imagem de um curso$")
     public void clicoNaImagemDeUmCurso() throws InterruptedException {
-        // Essa linha clica no plano e não no curso
-        //driver.findElement(By.cssSelector("span.mais")).click();
-        Thread.sleep(5000);
-        //driver.findElement(By.xpath("/html[1]/body[1]/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]/span[1]/span[1]")).click();
 
-        WebElement ele = driver.findElement(By.xpath("/body/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));
+
+        WebElement ele = driver.findElement(By.xpath("/html[1]/body[1]/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));
+
         Actions action = new Actions(driver);
         action.moveToElement(ele).perform();
 
+        ele.click();
 
-        driver.findElement(By.cssSelector("body.flat-theme:nth-child(2) div.container.lis_loja:nth-child(2) div.initial-cursos div.row.lis_loja:nth-child(3) div.col-md-12 div.owl-carousel.owl-theme.course-list.lis_produtos.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item:nth-child(3) div.item-plan.item.item-course a:nth-child(1) span.mais > span:nth-child(1)")).click();
         System.out.println("3 - Clicou no curso");
     }
 
-    @Então("^Vejo a pagina com detalhes do curso$")
+    @Entao("^vejo a pagina com detalhes do curso$")
     public void vejoAPaginaComDetalhesDoCurso() {
-        wait.until(ExpectedConditions. titleIs("Mantis - Iterasys"));
+        wait.until(ExpectedConditions.titleIs("Mantis - Iterasys"));
         assertEquals(driver.getTitle(),"Mantis - Iterasys");
         System.out.println("4 - Exibiu a página de detalhes do curso");
     }
 
-    @E("^clico no botao OK do popup da LGPD$")
-    public void clicoNoBotaoOKDoPopupDaLGPD() {
+    @E("^clico no botao Ok do popup da LGPD$")
+    public void clicoNoBotaoOkDoPopupDaLGPD() {
         driver.findElement(By.cssSelector("a.cc-btn.cc-dismiss")).click();
         System.out.println("2 - Clicou no botão ok do popup");
     }
-
 }

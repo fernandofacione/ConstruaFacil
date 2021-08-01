@@ -56,4 +56,3 @@ public class seleniumIDE {
         assertThat(driver.findElement(By.cssSelector(".acessar")).getText(), is("ACESSAR"));
     }
 }
-
