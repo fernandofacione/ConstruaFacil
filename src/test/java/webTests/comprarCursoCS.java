@@ -6,6 +6,7 @@ import cucumber.api.java.pt.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -94,19 +95,29 @@ public class comprarCursoCS {
     }
 
     @Quando("^clico na imagem de um curso$")
-    public void clicoNaImagemDeUmCurso() {
-        driver.findElement(By.cssSelector("span.mais")).click();
+    public void clicoNaImagemDeUmCurso() throws InterruptedException {
+        // Essa linha clica no plano e não no curso
+        //driver.findElement(By.cssSelector("span.mais")).click();
+        Thread.sleep(5000);
+        //driver.findElement(By.xpath("/html[1]/body[1]/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]/span[1]/span[1]")).click();
 
+        WebElement saibaMais = driver.findElement(By.xpath("/body/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));
+
+        driver.findElement(By.cssSelector("body.flat-theme:nth-child(2) div.container.lis_loja:nth-child(2) div.initial-cursos div.row.lis_loja:nth-child(3) div.col-md-12 div.owl-carousel.owl-theme.course-list.lis_produtos.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item:nth-child(3) div.item-plan.item.item-course a:nth-child(1) span.mais > span:nth-child(1)")).click();
+        System.out.println("3 - Clicou no curso");
     }
 
     @Então("^Vejo a pagina com detalhes do curso$")
     public void vejoAPaginaComDetalhesDoCurso() {
         wait.until(ExpectedConditions. titleIs("Mantis - Iterasys"));
         assertEquals(driver.getTitle(),"Mantis - Iterasys");
+        System.out.println("4 - Exibiu a página de detalhes do curso");
     }
 
     @E("^clico no botao OK do popup da LGPD$")
     public void clicoNoBotaoOKDoPopupDaLGPD() {
         driver.findElement(By.cssSelector("a.cc-btn.cc-dismiss")).click();
+        System.out.println("2 - Clicou no botão ok do popup");
     }
+
 }
