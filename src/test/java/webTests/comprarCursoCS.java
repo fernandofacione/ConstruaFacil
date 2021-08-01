@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -101,7 +102,10 @@ public class comprarCursoCS {
         Thread.sleep(5000);
         //driver.findElement(By.xpath("/html[1]/body[1]/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]/span[1]/span[1]")).click();
 
-        WebElement saibaMais = driver.findElement(By.xpath("/body/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));
+        WebElement ele = driver.findElement(By.xpath("/body/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));
+        Actions action = new Actions(driver);
+        action.moveToElement(ele).perform();
+
 
         driver.findElement(By.cssSelector("body.flat-theme:nth-child(2) div.container.lis_loja:nth-child(2) div.initial-cursos div.row.lis_loja:nth-child(3) div.col-md-12 div.owl-carousel.owl-theme.course-list.lis_produtos.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item:nth-child(3) div.item-plan.item.item-course a:nth-child(1) span.mais > span:nth-child(1)")).click();
         System.out.println("3 - Clicou no curso");
