@@ -2,8 +2,8 @@ stepsPO/comprarCursoPO.java
  stepsPO.comprarCursoPO
 utils/Evidencias.java
  utils.Evidencias
-unitTests/TestaCalc.java
- unitTests.TestaCalc
+webTests/comprarCursoCS.java
+ webTests.comprarCursoCS
 webTests/seleniumSimples.java
  webTests.seleniumSimples
 apiTests/User.java
@@ -16,5 +16,5 @@ utils/Logs.java
  utils.Logs
 stepsPO/Hooks.java
  stepsPO.Hooks
-webTests/comprarCursoCS.java
- webTests.comprarCursoCS
+unitTests/TestaCalc.java
+ unitTests.TestaCalc
