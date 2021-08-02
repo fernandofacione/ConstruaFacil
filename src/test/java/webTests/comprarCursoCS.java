@@ -99,10 +99,10 @@ public class comprarCursoCS {
     }
 
     @Quando("^clico na imagem de um curso$")
-    public void clicoNaImagemDeUmCurso()  {
+    public void clicoNaImagemDeUmCurso() throws InterruptedException {
 
 
-        WebElement ele = driver.findElement(By.xpath("/html[1]/body[1]/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));
+        WebElement ele = driver.findElement(By.xpath("//body/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]/span[1]"));
 
         Actions action = new Actions(driver);
         action.moveToElement(ele).perform();

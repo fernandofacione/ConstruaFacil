@@ -1,20 +1,20 @@
-apiTests/Pet.java
- apiTests.Pet
-unitTests/TestaCalc.java
- unitTests.TestaCalc
-apiTests/User.java
- apiTests.User
-webTests/seleniumIDE.java
- webTests.seleniumIDE
 stepsPO/comprarCursoPO.java
  stepsPO.comprarCursoPO
 utils/Evidencias.java
  utils.Evidencias
-stepsPO/Hooks.java
- stepsPO.Hooks
+unitTests/TestaCalc.java
+ unitTests.TestaCalc
 webTests/seleniumSimples.java
  webTests.seleniumSimples
+apiTests/User.java
+ apiTests.User
+webTests/seleniumIDE.java
+ webTests.seleniumIDE
+apiTests/Pet.java
+ apiTests.Pet
 utils/Logs.java
  utils.Logs
+stepsPO/Hooks.java
+ stepsPO.Hooks
 webTests/comprarCursoCS.java
  webTests.comprarCursoCS
