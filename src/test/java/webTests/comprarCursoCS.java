@@ -15,6 +15,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 public class comprarCursoCS {
@@ -97,7 +99,7 @@ public class comprarCursoCS {
     }
 
     @Quando("^clico na imagem de um curso$")
-    public void clicoNaImagemDeUmCurso() throws InterruptedException {
+    public void clicoNaImagemDeUmCurso()  {
 
 
         WebElement ele = driver.findElement(By.xpath("/html[1]/body[1]/main[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]"));

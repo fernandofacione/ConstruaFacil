@@ -10,11 +10,11 @@ stepsPO/comprarCursoPO.java
  stepsPO.comprarCursoPO
 utils/Evidencias.java
  utils.Evidencias
-webTests/comprarCursoCS.java
- webTests.comprarCursoCS
+stepsPO/Hooks.java
+ stepsPO.Hooks
 webTests/seleniumSimples.java
  webTests.seleniumSimples
 utils/Logs.java
  utils.Logs
-stepsPO/Hooks.java
- stepsPO.Hooks
+webTests/comprarCursoCS.java
+ webTests.comprarCursoCS
