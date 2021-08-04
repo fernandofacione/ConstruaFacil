@@ -8,11 +8,13 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.Home;
 
 import java.util.concurrent.TimeUnit;
 
 public class comprarCursoPO {
     WebDriver driver;
+    Home home;
 
     @Before
     public void iniciar(){
@@ -38,6 +40,7 @@ public class comprarCursoPO {
 
     @Quando("^pesquiso por \"([^\"]*)\" PO$")
     public void pesquisoPorPO(String arg0)  {
+        home
         System.out.println("Passo 2");
     }
 
