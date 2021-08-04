@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="stepsPO.Runner" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-02T23:40:32" hostname="NANINE" time="0.077">
+<testsuite name="stepsPO.Runner" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-03T00:20:32" hostname="NANINE" time="0.076">
   <properties/>
-  <testcase name="feature[0](Comprar Curso PO)" classname="stepsPO.Runner" time="0.077"/>
+  <testcase name="feature[0](Comprar Curso PO)" classname="stepsPO.Runner" time="0.076"/>
   <system-out><![CDATA[#language: pt
 Funcionalidade: Comprar Curso PO
 Passo 0

@@ -1,15 +1,38 @@
 package stepsPO;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class comprarCursoPO {
+    WebDriver driver;
 
+    @Before
+    public void iniciar(){
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/92/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);
+        driver.manage().window().maximize();
+
+        System.out.println("Passo 0-Classe");
+    }
+
+    @After
+    public void finalizar(){
+        driver.quit();
+        System.out.println("Passo Z-Classe");
+    }
 
     @Dado("^que acesso o site da Iterasys  PO$")
     public void queAcessoOSiteDaIterasysPO() {
+        driver.get("https://iterasys.com.br");
         System.out.println("Passo 1");
     }
 
