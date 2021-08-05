@@ -8,13 +8,21 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Home;
+import pages.Resultado;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class comprarCursoPO {
     WebDriver driver;
+    WebDriverWait wait;
+
     Home home;
+    Resultado resultado;
 
     @Before
     public void iniciar(){
@@ -23,7 +31,9 @@ public class comprarCursoPO {
         driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
 
+        wait = new WebDriverWait(driver, 5,1);
         home = new Home(driver);
+        resultado = new Resultado(driver);
 
         System.out.println("Passo 0-Classe");
     }
@@ -53,17 +63,23 @@ public class comprarCursoPO {
     }
 
     @Entao("^vejo a lista de resultados para o curso \"([^\"]*)\" PO$")
-    public void vejoAListaDeResultadosParaOCursoPO(String arg0) {
+    public void vejoAListaDeResultadosParaOCursoPO(String curso) {
+        String textoEsperado = "Cursos › \"" + curso + "\"";
+        wait.until(ExpectedConditions.textToBe(resultado.verificarElemento(),textoEsperado));
+        assertEquals(resultado.lerIndicadorDeCurso(), textoEsperado);
         System.out.println("Passo 4");
     }
 
     @Quando("^clico em Matricule-se PO$")
     public void clicoEmMatriculeSePO() {
+        resultado.clicarMatriculese();
         System.out.println("Passo 5");
     }
+
 
     @Entao("^confirmo o nome do curso como \"([^\"]*)\" e o preco de \"([^\"]*)\" PO$")
     public void confirmoONomeDoCursoComoEOPrecoDePO(String arg0, String arg1)  {
         System.out.println("Passo 6");
     }
+
 }
