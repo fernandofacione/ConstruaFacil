@@ -1,7 +1,3 @@
-stepsPO/comprarCursoPO.java
- stepsPO.comprarCursoPO
-utils/Evidencias.java
- utils.Evidencias
 webTests/comprarCursoCS.java
  webTests.comprarCursoCS
 webTests/seleniumSimples.java
@@ -10,13 +6,23 @@ apiTests/User.java
  apiTests.User
 webTests/seleniumIDE.java
  webTests.seleniumIDE
+pages/Home.java
+ pages.Home
+stepsPO/Runner.java
+ stepsPO.Runner
+unitTests/TestaCalc.java
+ unitTests.TestaCalc
+stepsPO/comprarCursoPO.java
+ stepsPO.comprarCursoPO
+utils/Evidencias.java
+ utils.Evidencias
+pages/Resultado.java
+ pages.Resultado
 apiTests/Pet.java
  apiTests.Pet
 utils/Logs.java
  utils.Logs
 stepsPO/Hooks.java
  stepsPO.Hooks
-unitTests/TestaCalc.java
- unitTests.TestaCalc
-stepsPO/Runner.java
- stepsPO.Runner
+pages/Carrinho.java
+ pages.Carrinho
