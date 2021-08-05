@@ -18,10 +18,12 @@ public class comprarCursoPO {
 
     @Before
     public void iniciar(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chrome/92/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/91/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
+
+        home = new Home(driver);
 
         System.out.println("Passo 0-Classe");
     }
@@ -39,13 +41,14 @@ public class comprarCursoPO {
     }
 
     @Quando("^pesquiso por \"([^\"]*)\" PO$")
-    public void pesquisoPorPO(String arg0)  {
-        home
+    public void pesquisoPorPO(String curso)  {
+        home.pesquisarPorCurso(curso);
         System.out.println("Passo 2");
     }
 
     @E("^clico na Lupa PO$")
     public void clicoNaLupaPO() {
+        home.clicarNaLupa();
         System.out.println("Passo 3");
     }
 

@@ -13,7 +13,11 @@ formatter.feature({
   "keyword": "Funcionalidade"
 });
 formatter.before({
-  "duration": 105000,
+  "duration": 97000,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2048949700,
   "status": "passed"
 });
 formatter.scenario({
@@ -58,7 +62,7 @@ formatter.match({
   "location": "comprarCursoPO.queAcessoOSiteDaIterasysPO()"
 });
 formatter.result({
-  "duration": 56959900,
+  "duration": 4170138100,
   "status": "passed"
 });
 formatter.match({
@@ -71,14 +75,14 @@ formatter.match({
   "location": "comprarCursoPO.pesquisoPorPO(String)"
 });
 formatter.result({
-  "duration": 1160100,
+  "duration": 184618200,
   "status": "passed"
 });
 formatter.match({
   "location": "comprarCursoPO.clicoNaLupaPO()"
 });
 formatter.result({
-  "duration": 43700,
+  "duration": 1845788300,
   "status": "passed"
 });
 formatter.match({
@@ -91,14 +95,14 @@ formatter.match({
   "location": "comprarCursoPO.vejoAListaDeResultadosParaOCursoPO(String)"
 });
 formatter.result({
-  "duration": 56800,
+  "duration": 76100,
   "status": "passed"
 });
 formatter.match({
   "location": "comprarCursoPO.clicoEmMatriculeSePO()"
 });
 formatter.result({
-  "duration": 38000,
+  "duration": 43400,
   "status": "passed"
 });
 formatter.match({
@@ -115,11 +119,15 @@ formatter.match({
   "location": "comprarCursoPO.confirmoONomeDoCursoComoEOPrecoDePO(String,String)"
 });
 formatter.result({
-  "duration": 55900,
+  "duration": 76700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 37100,
+  "duration": 49700,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 665336300,
   "status": "passed"
 });
 });
