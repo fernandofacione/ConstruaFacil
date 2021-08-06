@@ -12,17 +12,17 @@ stepsPO/Runner.java
  stepsPO.Runner
 unitTests/TestaCalc.java
  unitTests.TestaCalc
-stepsPO/comprarCursoPO.java
- stepsPO.comprarCursoPO
+pages/Carrinho.java
+ pages.Carrinho
 utils/Evidencias.java
  utils.Evidencias
-pages/Resultado.java
- pages.Resultado
+stepsPO/Hooks.java
+ stepsPO.Hooks
 apiTests/Pet.java
  apiTests.Pet
 utils/Logs.java
  utils.Logs
-stepsPO/Hooks.java
- stepsPO.Hooks
-pages/Carrinho.java
- pages.Carrinho
+stepsPO/comprarCursoPO.java
+ stepsPO.comprarCursoPO
+pages/Resultado.java
+ pages.Resultado
