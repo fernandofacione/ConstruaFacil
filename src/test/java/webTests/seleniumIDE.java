@@ -25,7 +25,7 @@ public class seleniumIDE {
     JavascriptExecutor js;
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chrome/91/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/92/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
         js = (JavascriptExecutor) driver;
